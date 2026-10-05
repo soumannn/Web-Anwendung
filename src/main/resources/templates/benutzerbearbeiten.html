@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot + Thymeleaf + Bootstrap</title>
+</head>
+<body>
+
+
+    <div class="container my-5">
+
+        <!-- Kopfzeile --> 
+        <th:block th:replace="~{fragments/kopffuss:: kopf}"></th:block>
+
+        <h1 > 
+            <span th:if="${benutzerNr != 0}" th:text="#{benutzerprofil.titel(${benutzerNr})}" ></span>
+            <span th:if="${benutzerNr == 0}" th:text="#{benutzerprofil.titel-neu}" ></span>
+        </h1>
+        <!-- <h1 >Benutzer <span th:text="${benutzerNr}"></span> bearbeiten</h1> -->
+        <form class=" my-5" th:action="@{#}" th:method="POST" th:object="${benutzerForm}">
+
+
+            <div class="mb-3">
+                <label for="nameInput" class="form-label"><span th:text="#{benutzer.name}"></span></label>
+                <input type="text" class="form-control" id="nameInput" th:field="*{name}" th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : ''">
+                <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="emailInput" class="form-label"><span th:text=#{benutzer.email}/></label>
+              <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" th:field="*{email}" th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : ''">
+              <div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="passwortInput" class="form-label"><span th:text=#{benutzer.passwort}/></label>
+              <input type="password" class="form-control" id="passwortInput" th:field="*{passwort}" th:classappend="${#fields.hasErrors('passwort')} ? 'is-invalid' : ''">
+              <div class="text-danger" th:if="${#fields.hasErrors('passwort')}" th:errors="*{passwort}"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="geburtInput" class="form-label"><span th:text="#{benutzer.geburtstag}"></span></label>
+                <input type="date" class="form-control" id="geburtInput" th:field="*{geburtsdatum}" th:classappend="${#fields.hasErrors('geburtsdatum')} ? 'is-invalid' : ''">
+                <div class="text-danger" th:if="${#fields.hasErrors('geburtsdatum')}" th:errors="*{geburtsdatum}"></div>
+            </div>
+
+            <div class="row my-5">
+                <div class="col-6">
+                    
+                    <h2 th:text=#{benutzer.magich}></h2>
+                  
+                    <div class="mb-3">
+                        <input th:if="${#lists.isEmpty(benutzerForm.vorlieben) or (#lists.size(benutzerForm.vorlieben) < MAXWUNSCH)}" id="positiveInput" type="text" class="form-control" th:field="*{neueVorliebe}" value="" onkeypress="handleKeyPress(event)">
+                    </div>
+                    
+                    <ul class="list-group" id="positiveEigenschaften">
+                        <li th:each="ele: ${benutzerForm.getVorlieben}" class="list-group-item" >
+                        <span th:text="${ele}"></span>
+                        </li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="col-6">
+                    <h2  th:text=#{benutzer.magichnicht}></h2>
+
+                    <div class="mb-3">
+                        <input th:if="${#lists.isEmpty(benutzerForm.antipathien) or (#lists.size(benutzerForm.antipathien) < MAXWUNSCH)}" id="negativeInput" type="text" class="form-control" th:field="*{neueAntipathien}" value="" onkeypress="handleKeyPress(event)">
+                    </div>
+                    
+                    <ul class="list-group" id="negtiveEigenschaften">
+                        <li th:each="ele: ${benutzerForm.getAntipathien}" class="list-group-item" >
+                        <span th:text="${ele}"></span>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">OK</button>
+
+             <!-- Fußzeile -->
+         <th:block th:replace="~{fragments/kopffuss:: fuss}"></th:block>
+          </form>
+
+        </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript">
+        $(function() {
+            $('#datepicker').datepicker();
+        });
+
+    /*function addPositiveEigenschaft() {
+    var input = document.getElementById("positiveInput");
+    var value = input.value;
+    if (value.trim() !== "") {
+        var list = document.getElementById("positiveEigenschaften");
+        var listItem = document.createElement("li");
+        listItem.className = "list-group-item";
+        listItem.textContent = value;
+        list.appendChild(listItem);
+        input.value = "";
+    }
+}
+
+function addNegativeEigenschaft() {
+    var input = document.getElementById("negativeInput");//sucht nach id
+    var value = input.value;
+    if (value.trim() !== "") { //überprüft ob es leer ist
+        var list = document.getElementById("negativeEigenschaften");
+        var listItem = document.createElement("li");
+        listItem.className = "list-group-item";
+        listItem.textContent = value;
+        list.appendChild(listItem);
+        input.value = "";
+    }*/
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+propertyname;de;en;nl
+
+# Kopf-/Fusszeile
+kopf.benutzer;Benutzer;Users;Gebruikers
+kopf.ort;Orte;Locations;Locatie
+kopf.tour;Toure;Tours;Toure
+fuss.impressum;Impressum;Imprint;Afdruk
+fuss.kontakt;Kontakt;Contact;Contact
+
+# Benutzer-Formular
+benutzer.name;Name;Name;Naam
+benutzer.email;E-Mail;E-mail;E-mail
+benutzer.passwort;Passwort;Password;Wachtwoord
+benutzer.geburtstag;Geburtstag;Date of birth;Geboortedatum
+benutzer.magich;Ich mag;I like;Ik hou van
+benutzer.magichnicht;Ich mag nicht;I don't like;Ik hou niet van
+benutzerprofil.titel;Benutzerprofil {0} bearbeiten;Edit user profile {0};Gebruikersprofiel {0} bewerken
+benutzerprofil.titel-neu;Neues Profil hinzufuegen;Create new user; Nieuwe gebruiker aanmaken
+
+# Benutzer-Liste
+benutzerliste.ueberschrift;Benutzerliste;User list;Gebruikers lijst
+benutzerliste.leer;Keine Benutzer vorhanden;No users available;Geen gebruikers beschikbaar
+benutzerliste.neu;Neuen Benutzer erstellen;Create new user;Nieuwe gebruiker aanmaken
+benutzerliste.bearbeiten;Bearbeiten;Edit;Bewerking
+benutzerliste.loeschen;Loeschen;Delete;Verwijderen
+
+# Ort-Formular
+ort.name;Name;Name;Naam 
+ort.breite;Breite;Latitude;Breedte
+ort.laenge;Laenge;Longtitude;Lengte
+ort.titel;Ort {0} bearbeiten;Edit location {0};Locatie {0} bewerken
+ort.titel-neu;Neues Ort hinzufuegen;Create new location; Nieuwe Locatie aanmaken
+
+# Orte-Liste
+ortliste.ueberschrift;Orteliste;Location list;Locatie lijst
+ortliste.leer;Keine Orte vorhanden;No locations available;Geen Locatie beschikbaar
+ortliste.neu;Neuen Ort erstellen;Create new location;Nieuwe Locatie aanmaken
+ortliste.bearbeiten;Bearbeiten;Edit;Bewerking
+ortliste.karte;Karte;Map;Kaart
+ortliste.loeschen;Loeschen;Delete;Verwijderen
+
+# Tour-Formular
+tour.anbieter;Anbieter;Provider;Aanbieder
+tour.abfahrDateTime;Abfahrzeitpunkt;Departure time;Vertrektijd
+tour.preis;Preis;Price;Prijs
+tour.plaetze;Plaetze;Places;Plaatsen
+tour.info;Info;Info;Info
+tour.start;Startort;Departure;Start locatie
+tour.ziel;Zielort;destination;Sestemming
+tour.titel;Tour {0} bearbeiten;Edit tour {0};Tour {0} bewerken
+tour.titel-neu;Neues Tour hinzufuegen;Create new tour; Nieuwe Tour aanmaken
+
+# Tour-Liste
+tourliste.ueberschrift;Tourliste;Tour list;Tour lijst
+tourliste.leer;Keine Toure vorhanden;No Tours available;Geen Toure beschikbaar
+tourliste.neu;Neues Tour erstellen;Create new Tour;Nieuwe Tour aanmaken
+tourliste.bearbeiten;Bearbeiten;Edit;Bewerking
+tourliste.loeschen;Loeschen;Delete;Verwijderen
+
+# GutesPasswort-Validator
+gutespasswort.fehler;Das ist kein gutes Passwort;This is not a good password;Dit is geen goed wachtwoord
+
+# Benutzer Validator
+name_laenge.fehler;Name darf von {min} bis {max} Zeichen haben;Name can have from {min} to {max} characters;De naam kan {min} tot {max} tekens bevatten
+passwort.fehler;Passwort ist noch nicht gesetzt;Password is not yet set;Wachtwoord is nog niet ingesteld
+
+# Ort Validator
+bestaetigen.validator;Das Formular wurde automatisch vorbefuellt. Bitte ueberpruefen Sie die Informationen;The form has been pre-filled automatically. Please review the information.;Het formulier werd automatisch vooraf ingevuld. Controleer de informatie.
+bestaetigen.fehler;Es wurden keine Vorschlaege fuer den eingegebenen Ortsnamen gefunden;The form has been pre-filled automatically. Please review the information.;Het formulier werd automatisch vooraf ingevuld. Controleer de informatie.
+
+# Tour Validator
+anbieter.fehler;Du musst ein Anbieter waehlen;You must choose a provider;Je moet een aanbieder kiezen
+zeit.fehler;Datum muss heute oder in der Zukunft gesetzt werden;Date must be set today or in the future;De datum moet vandaag of in de toekomst worden ingesteld
+preis.fehler;Preis muss positiv sein;Price must be positive;Prijs moet positief zijn
+plaetze.fehler;Plaetze muss min. 1 sein;Places must be at least 1;Plaatsen moeten minimaal 1 zijn
+ort.fehler;Du musst ein Ort waehlen;You must choose a location;Je moet een plaats kiezen
+info.fehler;Info darf nur 100 Zeichen lang enthalten;Info may only contain 100 characters;Info mag slechts 100 tekens bevatten
